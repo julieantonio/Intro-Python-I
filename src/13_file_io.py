@@ -7,6 +7,10 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 
 # Open up the "foo.txt" file (which already exists) for reading
 # Print all the contents of the file, then close the file
+with open('foo.txt') as f:
+    read_data = f.read()
+    print(read_data)
+    f.close()
 
 # YOUR CODE HERE
 
@@ -15,4 +19,6 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # then close the file. Open up "bar.txt" and inspect it to make
 # sure that it contains what you expect it to contain
 
+with open('bar.txt', 'w+') as b:
+    b.write('arbitraty content\n arbitrary content 2\n more of the same')
 # YOUR CODE HERE
