@@ -22,3 +22,20 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+# c= calendar.TextCalendar(calendar.SUNDAY)
+# mm = input()
+# yyyy = input()
+# str= c.formatmonth(int(mm), int(yyyy))
+# print(str)
+
+user_input = sys.argv[1:]
+print(datetime.today().month)
+if len(user_input) == 2:
+    print(calendar.month(int(user_input[0]), int(user_input[1])))
+elif len(user_input) == 1:
+    print(calendar.month(datetime.today().year, int(user_input[0])))
+elif len(user_input) == 0:
+    print(calendar.month(datetime.today().year, datetime.today().month))
+else:
+    print('Enter a month and year to see the calendar, just a month to see that month for the current year, or nothing to see the current month')
